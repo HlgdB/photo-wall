@@ -1,38 +1,69 @@
+@import '~antd/dist/antd.css';
+
+.ant-divider {
+  border-top: 1px solid #bdc3c7;
+  opacity: 50%;
+}
+
 .App {
-  text-align: center;
+  width: 100vw;
+  background-color: #273c75;
+  clear: both;
+  border: solid 0px black;
+  padding: 1px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.header .container {
+  font-family: "Gill Sans", sans-serif;
+  font-size: 3.5vmin;
+  text-align: right;
+  color: #ecf0f1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo {
+  display: inline-block;
+  width: 48.3vmin;
+}
+
+.avatar {
+  width: 5vmin;
+  border-radius: 1vmin;
+  text-decoration: none;
+}
+
+.main {
+  margin: 40px 0;
+}
+
+.footer {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #ecf0f1;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.footer a {
+  color: #27ae60;
+}
+
+.container {
+  max-width: 100%;
+  width: 1128px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+#photo-container {
+  position: relative;
+}
+
+.image {
+  border-radius: 4px;
 }
