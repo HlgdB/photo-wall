@@ -1,0 +1,6 @@
+.uploadGroup {
+  position: fixed;
+  bottom: 10vh;
+  left: 10vw;
+  z-index: 999;
+}

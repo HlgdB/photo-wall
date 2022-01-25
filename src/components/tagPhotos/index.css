@@ -1,0 +1,15 @@
+.ant-divider {
+  border-top: 1px solid #bdc3c7;
+  opacity: 50%;
+}
+
+.container {
+  max-width: 100%;
+  width: 1128px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.container h1,h2,h3,h4 {
+  color: #ecf0f1;
+}
