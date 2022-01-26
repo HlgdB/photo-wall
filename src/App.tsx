@@ -29,7 +29,7 @@ function App() {
   return (
     <ConfigProvider locale={zhCN}>
       <div className="App">
-        <MyUpload />
+        <MyUpload tags={rootData} />
         <header className="header">
           <div className="container">
             <section>

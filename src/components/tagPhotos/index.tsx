@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Divider, Image } from "antd";
 import Macy from 'macy';
 import './index.css';
+import { Destination } from '../../config';
 
 export interface tagComponentsProps {
   label: string;
@@ -44,7 +45,7 @@ const Index = (props: tagComponentsProps) => {
       <h3>{label}</h3>
       <div id={`${value}-container`}>
         {photosPathList.map((path: string) => {
-          return <Image src={path} className="image" key={path} />;
+          return <Image src={Destination+path} className="image" key={path} />;
         })}
       </div>
     </div>

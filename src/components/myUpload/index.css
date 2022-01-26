@@ -1,6 +1,11 @@
 .uploadGroup {
   position: fixed;
-  bottom: 10vh;
+  bottom: 0;
   left: 10vw;
   z-index: 999;
+}
+
+.uploadBtn {
+  background-color: #192a56;
+  color: aliceblue;
 }
