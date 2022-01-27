@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Upload, Button, message, Select, Drawer, Divider, Input } from "antd";
+import { Upload, Button, message, Select, Drawer, Divider, Input, notification } from "antd";
 import { UpOutlined } from "@ant-design/icons";
 import "./index.css";
 import { BACKEND_URL } from "../../config";
@@ -48,12 +48,20 @@ const DrawerInner = (props: any) => {
     }
     const tagInfo = tagRef.current.state.value.split('---');
     if(tagInfo.length !== 2){
-      message.error('格式错误！');
+      notification.error({
+        message: ':(',
+        description: '格式错误！',
+        placement: 'bottomLeft',
+      });
       return;
     }
     const tags = await AddTag(tagInfo[1], tagInfo[0]);
     setAllTags(tags);
-    message.success("got it!");
+    notification.success({
+      message: ':)',
+      description: 'got it!',
+      placement: 'bottomLeft',
+    });
   }
 
   return (
@@ -112,9 +120,17 @@ const VerifyInput = (props: any) => {
     const res = await VerifyPassword(val);
     if(res && res.success) {
       setIsVerified(true);
-      message.success("yes :)");
+      notification.success({
+        message: ':)',
+        description: 'good try',
+        placement: 'bottomLeft',
+      });
     } else {
-      message.error("bad try :(");
+      notification.error({
+        message: ':(',
+        description: 'bad try',
+        placement: 'bottomLeft',
+      });
     }
   }
 
