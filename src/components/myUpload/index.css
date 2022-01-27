@@ -6,6 +6,9 @@
 }
 
 .uploadBtn {
+  width: 80px;
   background-color: #192a56;
   color: aliceblue;
+  border-bottom: 0;
+  border-radius: 16px 16px 0 0;
 }

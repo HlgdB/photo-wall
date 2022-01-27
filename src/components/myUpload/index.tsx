@@ -19,7 +19,7 @@ const DrawerInner = (props: any) => {
     data: {
       value: tagValue,
     },
-    maxCount: 9,
+    maxCount: 100,
     showUploadList: true,
     action: `${BACKEND_URL}/upload`,
     onChange(info: any) {
@@ -68,7 +68,7 @@ const Index = (props: any) => {
 
   return(
     <div className="uploadGroup">
-      <Button className="uploadBtn" type="dashed" icon={<UpOutlined />} onClick={() => {
+      <Button className="uploadBtn" type="default" icon={<UpOutlined />} onClick={() => {
         setVisible(true);
       }} />
       <Drawer

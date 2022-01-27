@@ -47,7 +47,7 @@ function App() {
               <br />
               Hope you will like it.
             </section>
-            <section>
+            <section style={{ marginTop: 8 }}>
               <img src={yangAvater} className="avatar" alt="avatar" />
               {" with "}
               <img src={binAvatar} className="avatar" alt="avatar" />

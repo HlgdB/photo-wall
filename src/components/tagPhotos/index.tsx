@@ -12,7 +12,6 @@ export interface tagComponentsProps {
 }
 
 const Index = (props: tagComponentsProps) => {
-  console.log(props);
   const { label, photosPathList, value } = props;
 
   useEffect(() => {
@@ -40,9 +39,8 @@ const Index = (props: tagComponentsProps) => {
   }, []);
 
   return (
-    <div className="container">
-      <Divider />
-      <h3>{label}</h3>
+    <div className="container" id={`#${value}`}>
+      <Divider orientation='left'>{label}</Divider>
       <div id={`${value}-container`}>
         {photosPathList.map((path: string) => {
           return <Image src={Destination+path} className="image" key={path} />;
