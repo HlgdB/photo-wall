@@ -4,9 +4,10 @@ import { UpOutlined } from "@ant-design/icons";
 import "./index.css";
 import { BACKEND_URL } from "../../config";
 import { tagComponentsProps } from "../tagPhotos";
-import { AddTag, GetAllInfos } from "../../backend";
+import { AddTag, GetAllInfos, VerifyPassword } from "../../backend";
 
 const { Option } = Select;
+const { Search } = Input;
 
 let shouldRefresh: boolean = false;
 
@@ -104,9 +105,30 @@ const DrawerInner = (props: any) => {
   );
 };
 
+const VerifyInput = (props: any) => {
+  const { setIsVerified } = props;
+
+  const verifyPw = async (val: any) => {
+    const res = await VerifyPassword(val);
+    if(res && res.success) {
+      setIsVerified(true);
+      message.success("yes :)");
+    } else {
+      message.error("bad try :(");
+    }
+  }
+
+  return(
+    <div style={{ display: 'flex', alignItems: 'center', height: '100%', width: '100%' }}>
+      <Search placeholder="password :)" onSearch={verifyPw} enterButton="try try" style={{ width: '100%' }} />
+    </div>
+  );
+}
+
 const Index = (props: any) => {
   const { tags, setRootData } = props;
   const [visible, setVisible] = useState(false);
+  const [isVerified, setIsVerified] = useState(false);
 
   return (
     <div className="uploadGroup">
@@ -131,7 +153,9 @@ const Index = (props: any) => {
           })();
         }}
       >
-        <DrawerInner tags={tags} />
+        {
+          isVerified ? <DrawerInner tags={tags} /> : <VerifyInput setIsVerified={setIsVerified} />
+        }
       </Drawer>
     </div>
   );

@@ -28,3 +28,20 @@ export const AddTag = async (value: string, label: string) => {
     return data;
   });
 }
+
+export const VerifyPassword = async (password: string) => {
+  return fetch(`${BACKEND_URL}/verifyPassword`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      password
+    })
+  }).then((response) => {
+    return response.json();
+  }).then((data) => {
+    console.log(data);
+    return data;
+  });
+}
