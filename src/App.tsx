@@ -8,28 +8,23 @@ import { ConfigProvider } from "antd";
 import TimeRecorder from "./components/timeRecorder";
 import TagPhotos, { tagComponentsProps } from './components/tagPhotos';
 import MyUpload from "./components/myUpload";
-import { BACKEND_URL } from './config';
+import { GetAllInfos } from './backend';
 
 function App() {
   const [rootData, setRootData] = useState([]);
 
   useEffect(() => {
-    if(!rootData.length) {
-      fetch(`${BACKEND_URL}/getAllInfos`, {
-        method: 'GET',
-      }).then((response) => {
-        return response.json();
-      }).then((data) => {
-        console.log(data);
-        setRootData(data);
-      });
-    }
-  }, [rootData]);
+    (async function() {
+      if(!rootData.length) {
+        setRootData(await GetAllInfos());
+      }
+    })();
+  }, [rootData.length]);
 
   return (
     <ConfigProvider locale={zhCN}>
       <div className="App">
-        <MyUpload tags={rootData} />
+        <MyUpload tags={rootData} setRootData={setRootData} />
         <header className="header">
           <div className="container">
             <section>
