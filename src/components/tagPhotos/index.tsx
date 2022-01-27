@@ -36,7 +36,7 @@ const Index = (props: tagComponentsProps) => {
     });
     return () => {};
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [photosPathList]);
 
   return (
     <div className="container" id={`#${value}`}>
