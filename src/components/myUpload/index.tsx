@@ -80,7 +80,7 @@ const DrawerInner = (props: any) => {
       <section>
         <pre style={{ display: "inline" }}>Choose a tag:  </pre>
         <Select
-          defaultValue="daily"
+          defaultValue="hangzhou"
           onChange={(val) => {
             setTagValue(val);
           }}
